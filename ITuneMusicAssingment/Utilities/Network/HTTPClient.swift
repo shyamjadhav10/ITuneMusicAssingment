@@ -7,5 +7,28 @@
 //
 
 
-
 import Foundation
+
+
+class HTTPClient {
+    
+    
+    // MARK: Typealias
+    typealias CompletionResult = (Result<Data?, CommonError>) -> Void
+
+    
+    // MARK: - Shared Instance
+    static let shared = HTTPClient(session: URLSession.shared)
+    
+    
+    // MARK: - Private Properties
+    private let session: URLSessionProtocol
+    private var task: URLSessionDataTaskProtocol?
+    private var completionResult: CompletionResult?
+    
+    
+    // MARK: - Initialiser
+    init(session: URLSessionProtocol) {
+        self.session = session
+    }
+}

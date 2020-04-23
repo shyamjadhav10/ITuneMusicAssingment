@@ -8,11 +8,14 @@
 
 import Foundation
 
-typealias ErrorHandler = (Error?) -> Void
+//  Common Type errors
+typealias ErrorHandler = (CommonError?) -> Void
 
-struct Error {
+
+struct CommonError : Error {
     
     var localizedDescription: String
+    
     init(_ localizedDescription: String) {
         self.localizedDescription = localizedDescription
     }

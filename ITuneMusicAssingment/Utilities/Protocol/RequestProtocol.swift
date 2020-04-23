@@ -17,6 +17,7 @@ enum HTTPMethod: String {
     case delete  = "DELETE"
 }
 
+
 public typealias HTTPHeaders = [String: Any]
 
 
@@ -39,7 +40,7 @@ protocol URLSessionDataTaskProtocol {
 }
 
 
-//MARK:- Data Task
+//MARK:- Data Task Protocol
 protocol URLSessionProtocol {
     func dataTask(with request: URLRequest, completionHandler: @escaping (Data?, URLResponse?, Error?) -> Void) -> URLSessionDataTaskProtocol
 }
