@@ -20,6 +20,7 @@ enum HTTPMethod: String {
 public typealias HTTPHeaders = [String: Any]
 
 
+// Configuring Request Protocol
 protocol RequestProtocol {
 
     var baseURL: URL { get }
@@ -29,3 +30,13 @@ protocol RequestProtocol {
     var headers: HTTPHeaders? { get }
 
 }
+
+// Handlig states pf sessions
+protocol URLSessionDataTaskProtocol {
+    func resume()
+    func cancel()
+}
+
+
+
+

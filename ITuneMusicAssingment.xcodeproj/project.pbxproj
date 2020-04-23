@@ -16,6 +16,7 @@
 		0B09662E24516CFB003468E1 /* ITuneMusicAssingmentUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B09662D24516CFB003468E1 /* ITuneMusicAssingmentUITests.swift */; };
 		0BF64D062451F014002DBA82 /* HTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BF64D052451F014002DBA82 /* HTTPClient.swift */; };
 		0BF64D0A2451F0D8002DBA82 /* RequestProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BF64D092451F0D8002DBA82 /* RequestProtocol.swift */; };
+		0BF64D0C2451F486002DBA82 /* RequestExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BF64D0B2451F486002DBA82 /* RequestExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		0B09662F24516CFB003468E1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0BF64D052451F014002DBA82 /* HTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClient.swift; sourceTree = "<group>"; };
 		0BF64D092451F0D8002DBA82 /* RequestProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestProtocol.swift; sourceTree = "<group>"; };
+		0BF64D0B2451F486002DBA82 /* RequestExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -183,6 +185,7 @@
 			isa = PBXGroup;
 			children = (
 				0BF64D092451F0D8002DBA82 /* RequestProtocol.swift */,
+				0BF64D0B2451F486002DBA82 /* RequestExtension.swift */,
 			);
 			path = Protocol;
 			sourceTree = "<group>";
@@ -321,6 +324,7 @@
 				0B09661024516CF5003468E1 /* ViewController.swift in Sources */,
 				0B09660C24516CF5003468E1 /* AppDelegate.swift in Sources */,
 				0BF64D062451F014002DBA82 /* HTTPClient.swift in Sources */,
+				0BF64D0C2451F486002DBA82 /* RequestExtension.swift in Sources */,
 				0BF64D0A2451F0D8002DBA82 /* RequestProtocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
