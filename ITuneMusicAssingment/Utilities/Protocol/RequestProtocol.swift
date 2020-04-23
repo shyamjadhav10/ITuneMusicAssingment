@@ -31,11 +31,19 @@ protocol RequestProtocol {
 
 }
 
+
 // Handlig states pf sessions
 protocol URLSessionDataTaskProtocol {
     func resume()
     func cancel()
 }
+
+
+//MARK:- Data Task
+protocol URLSessionProtocol {
+    func dataTask(with request: URLRequest, completionHandler: @escaping (Data?, URLResponse?, Error?) -> Void) -> URLSessionDataTaskProtocol
+}
+
 
 
 
