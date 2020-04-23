@@ -98,7 +98,7 @@
 			isa = PBXGroup;
 			children = (
 				0B09660B24516CF5003468E1 /* AppDelegate.swift */,
-				0B09660F24516CF5003468E1 /* ViewController.swift */,
+				0B09663C2451747E003468E1 /* Search Listing */,
 				0B09661124516CF5003468E1 /* Main.storyboard */,
 				0B09661424516CFA003468E1 /* Assets.xcassets */,
 				0B09661624516CFA003468E1 /* LaunchScreen.storyboard */,
@@ -123,6 +123,38 @@
 				0B09662F24516CFB003468E1 /* Info.plist */,
 			);
 			path = ITuneMusicAssingmentUITests;
+			sourceTree = "<group>";
+		};
+		0B09663C2451747E003468E1 /* Search Listing */ = {
+			isa = PBXGroup;
+			children = (
+				0B09663E245174E6003468E1 /* Model */,
+				0B09663D245174DB003468E1 /* ViewModel */,
+				0B09663F245174EE003468E1 /* View */,
+			);
+			path = "Search Listing";
+			sourceTree = "<group>";
+		};
+		0B09663D245174DB003468E1 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		0B09663E245174E6003468E1 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		0B09663F245174EE003468E1 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				0B09660F24516CF5003468E1 /* ViewController.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
