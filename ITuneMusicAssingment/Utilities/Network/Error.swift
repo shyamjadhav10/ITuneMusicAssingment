@@ -20,3 +20,10 @@ struct CommonError : Error {
         self.localizedDescription = localizedDescription
     }
 }
+
+
+
+struct ServerError: Decodable {
+    let status: String?
+    let error: String?
+}

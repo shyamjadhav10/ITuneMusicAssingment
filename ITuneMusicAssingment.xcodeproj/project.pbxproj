@@ -178,6 +178,7 @@
 		0BF64D072451F023002DBA82 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				0BF64D0F2451FCD8002DBA82 /* New Group */,
 				0BF64D082451F08B002DBA82 /* Protocol */,
 				0BF64D042451EFE0002DBA82 /* Network */,
 			);
@@ -191,6 +192,13 @@
 				0BF64D0B2451F486002DBA82 /* RequestExtension.swift */,
 			);
 			path = Protocol;
+			sourceTree = "<group>";
+		};
+		0BF64D0F2451FCD8002DBA82 /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "New Group";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
