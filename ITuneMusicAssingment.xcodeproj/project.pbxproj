@@ -32,6 +32,8 @@
 		0BFFCF5A2452BFDB00C0B25A /* TrackListingRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BFFCF592452BFDB00C0B25A /* TrackListingRouter.swift */; };
 		0BFFCF5D2452D61800C0B25A /* SingleTabCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BFFCF5B2452D61800C0B25A /* SingleTabCollectionViewCell.swift */; };
 		0BFFCF5E2452D61800C0B25A /* SingleTabCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0BFFCF5C2452D61800C0B25A /* SingleTabCollectionViewCell.xib */; };
+		0BFFCF662452D7C400C0B25A /* ReusableSearchBarView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0BFFCF652452D7C400C0B25A /* ReusableSearchBarView.xib */; };
+		0BFFCF682452D98F00C0B25A /* ReusableSearchBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BFFCF672452D98F00C0B25A /* ReusableSearchBarView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,6 +85,8 @@
 		0BFFCF592452BFDB00C0B25A /* TrackListingRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackListingRouter.swift; sourceTree = "<group>"; };
 		0BFFCF5B2452D61800C0B25A /* SingleTabCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleTabCollectionViewCell.swift; sourceTree = "<group>"; };
 		0BFFCF5C2452D61800C0B25A /* SingleTabCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SingleTabCollectionViewCell.xib; sourceTree = "<group>"; };
+		0BFFCF652452D7C400C0B25A /* ReusableSearchBarView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReusableSearchBarView.xib; sourceTree = "<group>"; };
+		0BFFCF672452D98F00C0B25A /* ReusableSearchBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableSearchBarView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -135,6 +139,7 @@
 			children = (
 				0B09660B24516CF5003468E1 /* AppDelegate.swift */,
 				0BF64D072451F023002DBA82 /* Utilities */,
+				0BFFCF602452D75800C0B25A /* Common */,
 				0B09663C2451747E003468E1 /* Search Listing */,
 				0B09661124516CF5003468E1 /* Main.storyboard */,
 				0B09661424516CFA003468E1 /* Assets.xcassets */,
@@ -283,6 +288,23 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
+		0BFFCF602452D75800C0B25A /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				0BFFCF612452D76C00C0B25A /* Reusable View */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		0BFFCF612452D76C00C0B25A /* Reusable View */ = {
+			isa = PBXGroup;
+			children = (
+				0BFFCF652452D7C400C0B25A /* ReusableSearchBarView.xib */,
+				0BFFCF672452D98F00C0B25A /* ReusableSearchBarView.swift */,
+			);
+			path = "Reusable View";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -388,6 +410,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0BFFCF5E2452D61800C0B25A /* SingleTabCollectionViewCell.xib in Resources */,
+				0BFFCF662452D7C400C0B25A /* ReusableSearchBarView.xib in Resources */,
 				0B09661824516CFA003468E1 /* LaunchScreen.storyboard in Resources */,
 				0B09661524516CFA003468E1 /* Assets.xcassets in Resources */,
 				0B09661324516CF5003468E1 /* Main.storyboard in Resources */,
@@ -418,6 +441,7 @@
 				0B737A5F245270CF00369EB0 /* Constant.swift in Sources */,
 				0B09661024516CF5003468E1 /* MusicSearchListingViewController.swift in Sources */,
 				0B09660C24516CF5003468E1 /* AppDelegate.swift in Sources */,
+				0BFFCF682452D98F00C0B25A /* ReusableSearchBarView.swift in Sources */,
 				0B737A612452752000369EB0 /* TableViev.swift in Sources */,
 				0BF64D062451F014002DBA82 /* HTTPClient.swift in Sources */,
 				0BF64D0C2451F486002DBA82 /* RequestExtension.swift in Sources */,
