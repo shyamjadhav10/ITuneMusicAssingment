@@ -9,27 +9,6 @@
 import Foundation
 
 
-public struct TracksResponse: Decodable {
-    let resultCount: Int
-    var tracks: [Track] = []
-    
-    enum CodingKeys: String, CodingKey {
-        case resultCount, results
-    }
-    
-    public init(from decoder: Decoder) throws {
-        
-        let container = try decoder.container(keyedBy: CodingKeys.self)
-        self.resultCount = try container.decodeIfPresent(Int.self, forKey: .resultCount) ?? 0
-        if let list = try container.decodeIfPresent([Track].self, forKey: .results) {
-            self.tracks = list
-        }
-    }
-}
-
-
-
-
 
 public struct Track: Decodable {
     
@@ -68,5 +47,24 @@ public struct Track: Decodable {
         self.currency = try container.decodeIfPresent(String.self, forKey: .currency) ?? ""
         self.trackTimeMillis = try container.decodeIfPresent(Int.self, forKey: .trackTimeMillis) ?? 0
         self.collectionName = try container.decodeIfPresent(String.self, forKey: .collectionName) ?? ""
+    }
+}
+
+
+public struct TracksResponse: Decodable {
+    let resultCount: Int
+    var tracks: [Track] = []
+    
+    enum CodingKeys: String, CodingKey {
+        case resultCount, results
+    }
+    
+    public init(from decoder: Decoder) throws {
+        
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        self.resultCount = try container.decodeIfPresent(Int.self, forKey: .resultCount) ?? 0
+        if let list = try container.decodeIfPresent([Track].self, forKey: .results) {
+            self.tracks = list
+        }
     }
 }

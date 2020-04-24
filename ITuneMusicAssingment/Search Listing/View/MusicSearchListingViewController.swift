@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  MusicSearchListingViewController.swift
 //  ITuneMusicAssingment
 //
 //  Created by Shyam Jadhav on 23/04/20.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class MusicSearchListingViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
