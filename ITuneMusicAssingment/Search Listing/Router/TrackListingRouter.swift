@@ -12,36 +12,44 @@ import Foundation
 //Track APIs
 enum TrackAPI {
     case getTrackList
-    case getTrackDetails(id: Int)
 }
 
-
 extension TrackAPI : RequestProtocol {
-        
+    
     var baseURL: URL {
-        <#code#>
+        guard let url = URL(string: Constants.apiBaseUrl) else {
+            fatalError("BaseURL could not be configured.")
+        }
+        return url
     }
     
+    //Returns EndPoint for tracks APIs
     var path: String {
-        <#code#>
+        switch self {
+        case .getTrackList:
+            return "/search"
+        }
     }
     
+    //Returns HTTP Method for track APIs
     var httpMethod: HTTPMethod {
-        <#code#>
+        switch self {
+        default:
+            return .get
+        }
     }
     
+    //Encode and Returns Encoded Data
     var httpBody: Data? {
-        <#code#>
+        switch self {
+        default:
+            return nil
+        }
     }
     
+    //Return track APIs Specific Headers
     var headers: HTTPHeaders? {
-        <#code#>
+        return nil
     }
-    
-    
-    
-    
-    
-    
     
 }

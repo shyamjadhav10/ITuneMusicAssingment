@@ -17,16 +17,17 @@ class TrackListViewModel {
     var isLoading: Bindable<Bool> = Bindable(false)
     var tracks: Bindable<[Track]?> = Bindable(nil)
     var error: Bindable<CommonError?> = Bindable(nil)
-        
-    private var httpClient: HTTPClient!
+
+    private var httpClient: HTTPClient!    
     
     init(client: HTTPClient? = nil) {
         self.httpClient = client ?? HTTPClient.shared
     }
     
+    
     func getTrackList() {
         isLoading.value = true
-        httpClient.dataTask(<#RequestProtocol#>) { [weak self] (result) in
+        httpClient.dataTask(TrackAPI.getTrackList) { [weak self] (result) in
             guard let self = self else {
                 return
             }
