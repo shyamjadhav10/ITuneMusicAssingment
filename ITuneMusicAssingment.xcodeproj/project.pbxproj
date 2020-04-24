@@ -14,6 +14,7 @@
 		0B09661824516CFA003468E1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0B09661624516CFA003468E1 /* LaunchScreen.storyboard */; };
 		0B09662324516CFB003468E1 /* ITuneMusicAssingmentTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B09662224516CFB003468E1 /* ITuneMusicAssingmentTests.swift */; };
 		0B09662E24516CFB003468E1 /* ITuneMusicAssingmentUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B09662D24516CFB003468E1 /* ITuneMusicAssingmentUITests.swift */; };
+		0B737A5F245270CF00369EB0 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B737A5E245270CF00369EB0 /* Constant.swift */; };
 		0BF64D062451F014002DBA82 /* HTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BF64D052451F014002DBA82 /* HTTPClient.swift */; };
 		0BF64D0A2451F0D8002DBA82 /* RequestProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BF64D092451F0D8002DBA82 /* RequestProtocol.swift */; };
 		0BF64D0C2451F486002DBA82 /* RequestExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BF64D0B2451F486002DBA82 /* RequestExtension.swift */; };
@@ -51,6 +52,7 @@
 		0B09662924516CFB003468E1 /* ITuneMusicAssingmentUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ITuneMusicAssingmentUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0B09662D24516CFB003468E1 /* ITuneMusicAssingmentUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ITuneMusicAssingmentUITests.swift; sourceTree = "<group>"; };
 		0B09662F24516CFB003468E1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0B737A5E245270CF00369EB0 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		0BF64D052451F014002DBA82 /* HTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClient.swift; sourceTree = "<group>"; };
 		0BF64D092451F0D8002DBA82 /* RequestProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestProtocol.swift; sourceTree = "<group>"; };
 		0BF64D0B2451F486002DBA82 /* RequestExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestExtension.swift; sourceTree = "<group>"; };
@@ -169,6 +171,8 @@
 		0BF64D042451EFE0002DBA82 /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				0BF64D092451F0D8002DBA82 /* RequestProtocol.swift */,
+				0BF64D0B2451F486002DBA82 /* RequestExtension.swift */,
 				0BF64D052451F014002DBA82 /* HTTPClient.swift */,
 				0BF64D0D2451F7F9002DBA82 /* Error.swift */,
 			);
@@ -179,19 +183,18 @@
 			isa = PBXGroup;
 			children = (
 				0BF64D0F2451FCD8002DBA82 /* New Group */,
-				0BF64D082451F08B002DBA82 /* Protocol */,
+				0BF64D082451F08B002DBA82 /* Constants */,
 				0BF64D042451EFE0002DBA82 /* Network */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
 		};
-		0BF64D082451F08B002DBA82 /* Protocol */ = {
+		0BF64D082451F08B002DBA82 /* Constants */ = {
 			isa = PBXGroup;
 			children = (
-				0BF64D092451F0D8002DBA82 /* RequestProtocol.swift */,
-				0BF64D0B2451F486002DBA82 /* RequestExtension.swift */,
+				0B737A5E245270CF00369EB0 /* Constant.swift */,
 			);
-			path = Protocol;
+			path = Constants;
 			sourceTree = "<group>";
 		};
 		0BF64D0F2451FCD8002DBA82 /* New Group */ = {
@@ -332,6 +335,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0B737A5F245270CF00369EB0 /* Constant.swift in Sources */,
 				0B09661024516CF5003468E1 /* ViewController.swift in Sources */,
 				0B09660C24516CF5003468E1 /* AppDelegate.swift in Sources */,
 				0BF64D062451F014002DBA82 /* HTTPClient.swift in Sources */,

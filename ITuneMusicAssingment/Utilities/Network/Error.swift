@@ -13,7 +13,6 @@ typealias ErrorHandler = (CommonError?) -> Void
 
 
 struct CommonError : Error {
-    
     var localizedDescription: String
     
     init(_ localizedDescription: String) {
