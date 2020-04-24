@@ -12,7 +12,7 @@ class MusicSearchListingViewController: UIViewController {
     
     
     // MARK: - Outlets
-    
+    @IBOutlet weak var collectionView: UICollectionView!
     
     
     // MARK: - Declarations
@@ -20,7 +20,6 @@ class MusicSearchListingViewController: UIViewController {
     
     
     // MARK: - Default Methods
-    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -32,13 +31,11 @@ class MusicSearchListingViewController: UIViewController {
     }
     
     
-    
-    
     // MARK: - API Calls
     private func getTrackList() {
         //Binding
         viewModel.isLoading.bind { [unowned self] isLoading in
-            // self.view.showLoader(show: isBusy)
+            // self.view.showLoader(show: isLoading)
         }
         
         viewModel.tracks.bind { [unowned self] (tracks) in
@@ -48,7 +45,6 @@ class MusicSearchListingViewController: UIViewController {
         
         viewModel.error.bind { [unowned self] (error) in
             if let error = error {
-                //                  self.performFetchRequest()
                 Utils.displayAlert(title: "Error", message: error.localizedDescription)
             }
         }
@@ -56,8 +52,5 @@ class MusicSearchListingViewController: UIViewController {
         //Get Contacts
         viewModel.getTrackList()
     }
-    
-    
-    
 }
 
