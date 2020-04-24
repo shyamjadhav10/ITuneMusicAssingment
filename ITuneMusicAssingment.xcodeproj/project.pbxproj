@@ -170,7 +170,6 @@
 		0B09663C2451747E003468E1 /* Search Listing */ = {
 			isa = PBXGroup;
 			children = (
-				0BFFCF582452BFB900C0B25A /* Router */,
 				0B09663E245174E6003468E1 /* Model */,
 				0B09663F245174EE003468E1 /* View */,
 				0B09663D245174DB003468E1 /* ViewModel */,
@@ -232,6 +231,7 @@
 		0BF64D042451EFE0002DBA82 /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				0BFFCF592452BFDB00C0B25A /* TrackListingRouter.swift */,
 				0BF64D092451F0D8002DBA82 /* RequestProtocol.swift */,
 				0BF64D0B2451F486002DBA82 /* RequestExtension.swift */,
 				0BF64D052451F014002DBA82 /* HTTPClient.swift */,
@@ -270,14 +270,6 @@
 				0B737A6F24528AB400369EB0 /* Storyboard.swift */,
 			);
 			path = Extensions;
-			sourceTree = "<group>";
-		};
-		0BFFCF582452BFB900C0B25A /* Router */ = {
-			isa = PBXGroup;
-			children = (
-				0BFFCF592452BFDB00C0B25A /* TrackListingRouter.swift */,
-			);
-			path = Router;
 			sourceTree = "<group>";
 		};
 		0BFFCF5F2452D62400C0B25A /* Controller */ = {
