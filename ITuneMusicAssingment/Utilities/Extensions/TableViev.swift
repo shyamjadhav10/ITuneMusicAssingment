@@ -7,3 +7,23 @@
 //
 
 import Foundation
+import UIKit
+
+
+
+// MARK :- UITableViews
+extension UITableView {
+    
+    func registerNibs(_ cellIdentifiers: [String]) {
+        for identifier in cellIdentifiers {
+            self.register(UINib(nibName: identifier, bundle: nil), forCellReuseIdentifier: identifier)
+        }
+    }
+    
+    func registerNib(_ cellIdentifier: String) {
+        self.register(UINib(nibName: cellIdentifier, bundle: nil), forCellReuseIdentifier: cellIdentifier)
+    }
+}
+
+
+
