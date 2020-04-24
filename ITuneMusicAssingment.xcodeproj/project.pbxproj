@@ -29,6 +29,7 @@
 		0BF64D0A2451F0D8002DBA82 /* RequestProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BF64D092451F0D8002DBA82 /* RequestProtocol.swift */; };
 		0BF64D0C2451F486002DBA82 /* RequestExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BF64D0B2451F486002DBA82 /* RequestExtension.swift */; };
 		0BF64D0E2451F7F9002DBA82 /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BF64D0D2451F7F9002DBA82 /* Error.swift */; };
+		0BFFCF5A2452BFDB00C0B25A /* TrackListingRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BFFCF592452BFDB00C0B25A /* TrackListingRouter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,6 +78,7 @@
 		0BF64D092451F0D8002DBA82 /* RequestProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestProtocol.swift; sourceTree = "<group>"; };
 		0BF64D0B2451F486002DBA82 /* RequestExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestExtension.swift; sourceTree = "<group>"; };
 		0BF64D0D2451F7F9002DBA82 /* Error.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Error.swift; sourceTree = "<group>"; };
+		0BFFCF592452BFDB00C0B25A /* TrackListingRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackListingRouter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -159,6 +161,7 @@
 		0B09663C2451747E003468E1 /* Search Listing */ = {
 			isa = PBXGroup;
 			children = (
+				0BFFCF582452BFB900C0B25A /* Router */,
 				0B09663E245174E6003468E1 /* Model */,
 				0B09663F245174EE003468E1 /* View */,
 				0B09663D245174DB003468E1 /* ViewModel */,
@@ -256,6 +259,14 @@
 				0B737A6F24528AB400369EB0 /* Storyboard.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		0BFFCF582452BFB900C0B25A /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				0BFFCF592452BFDB00C0B25A /* TrackListingRouter.swift */,
+			);
+			path = Router;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -398,6 +409,7 @@
 				0B737A7224528CFD00369EB0 /* TrackViewModel.swift in Sources */,
 				0B737A652452755500369EB0 /* CollectionView.swift in Sources */,
 				0B737A682452762300369EB0 /* Utils.swift in Sources */,
+				0BFFCF5A2452BFDB00C0B25A /* TrackListingRouter.swift in Sources */,
 				0BF64D0E2451F7F9002DBA82 /* Error.swift in Sources */,
 				0B737A75245291D600369EB0 /* Bindable.swift in Sources */,
 				0B737A632452754400369EB0 /* UIView.swift in Sources */,
