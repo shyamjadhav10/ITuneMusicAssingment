@@ -13,7 +13,8 @@ class MusicSearchListingViewController: UIViewController {
     
     // MARK: - Outlets
     @IBOutlet weak var collectionView: UICollectionView!
-    
+    @IBOutlet weak var searchBarView: ReusableSearchBarView!
+
     
     // MARK: - Declarations
     private let viewModel = TrackListViewModel()
@@ -29,8 +30,13 @@ class MusicSearchListingViewController: UIViewController {
     func setupView(){
         getTrackList()
     }
-    
 
+    
+    func setupSearchBar(){
+        self.searchBarView.setView(delegate: self)
+    }
+    
+    
 
     // MARK: - API Calls
     private func getTrackList() {
@@ -41,6 +47,7 @@ class MusicSearchListingViewController: UIViewController {
         
         viewModel.tracks.bind { [unowned self] (tracks) in
             if tracks != nil {
+                
             }
         }
         
@@ -55,3 +62,16 @@ class MusicSearchListingViewController: UIViewController {
     }
 }
 
+
+extension MusicSearchListingViewController: ReusableSearchBarDelegate {
+    
+    func textDidChange(text: String) {
+        if !text.isEmpty {
+            
+        }
+    }
+
+    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
+
+    }
+}

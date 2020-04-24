@@ -141,7 +141,6 @@
 				0BF64D072451F023002DBA82 /* Utilities */,
 				0BFFCF602452D75800C0B25A /* Common */,
 				0B09663C2451747E003468E1 /* Search Listing */,
-				0B09661124516CF5003468E1 /* Main.storyboard */,
 				0B09661424516CFA003468E1 /* Assets.xcassets */,
 				0B09661624516CFA003468E1 /* LaunchScreen.storyboard */,
 				0B09661924516CFA003468E1 /* Info.plist */,
@@ -276,6 +275,7 @@
 			isa = PBXGroup;
 			children = (
 				0B09660F24516CF5003468E1 /* MusicSearchListingViewController.swift */,
+				0B09661124516CF5003468E1 /* Main.storyboard */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
