@@ -9,9 +9,55 @@
 import UIKit
 
 class MusicSearchListingViewController: UIViewController {
-
+    
+    
+    // MARK: - Outlets
+    
+    
+    
+    // MARK: - Declarations
+    private let viewModel = TrackListViewModel()
+    
+    
+    // MARK: - Default Methods
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
+    
+    
+    // MARK: - Setup Methods
+    func setupView(){
+        getTrackList()
+    }
+    
+    
+    
+    
+    // MARK: - API Calls
+    private func getTrackList() {
+        //Binding
+        viewModel.isLoading.bind { [unowned self] isLoading in
+            // self.view.showLoader(show: isBusy)
+        }
+        
+        viewModel.tracks.bind { [unowned self] (tracks) in
+            if tracks != nil {
+            }
+        }
+        
+        viewModel.error.bind { [unowned self] (error) in
+            if let error = error {
+                //                  self.performFetchRequest()
+                Utils.displayAlert(title: "Error", message: error.localizedDescription)
+            }
+        }
+        
+        //Get Contacts
+        viewModel.getTrackList()
+    }
+    
+    
+    
 }
 

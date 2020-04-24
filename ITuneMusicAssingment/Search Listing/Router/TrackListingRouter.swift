@@ -51,5 +51,4 @@ extension TrackAPI : RequestProtocol {
     var headers: HTTPHeaders? {
         return nil
     }
-    
 }
