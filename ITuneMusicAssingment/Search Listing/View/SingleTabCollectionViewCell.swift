@@ -19,13 +19,11 @@ class SingleTabCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var collectionName: UILabel!
     @IBOutlet weak var artistName: UILabel!
     
+    //MARK: - Declarations
     
-    // MARK: - Declarations
-
     
     
     // MARK: - Default Methods
-
     override func awakeFromNib() {
         super.awakeFromNib()
         setupView()
@@ -33,8 +31,25 @@ class SingleTabCollectionViewCell: UICollectionViewCell {
     
     
     // MARK: - Setup Methods
-    func setupView(){
+    private func setupView() {
+        priceLabel.font = UIFont.boldSystemFont(ofSize: 15.0)
+        yearAndTypeLabel.font = UIFont.boldSystemFont(ofSize: 13.0)
+        trackName.font = UIFont.boldSystemFont(ofSize: 13.0)
+        collectionName.font = UIFont.boldSystemFont(ofSize: 13.0)
+        artistName.font = UIFont.boldSystemFont(ofSize: 13.0)
+        
+        trackImageView.image = UIImage(named: "")
+        trackImageView.setRoundedCorners(cornerRadius: 3.0)
+    }
+    
+    
+    func setData(){
         
     }
     
+    
+    private func setLabel(label : UILabel, text : String){
+        label.text = text
+        label.isHidden = text.isEmpty
+    }
 }

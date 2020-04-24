@@ -30,7 +30,8 @@ class MusicSearchListingViewController: UIViewController {
         getTrackList()
     }
     
-    
+
+
     // MARK: - API Calls
     private func getTrackList() {
         //Binding
