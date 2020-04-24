@@ -12,7 +12,6 @@ import UIKit
 //MARK:- Storyboards
 extension UIStoryboard {
     
-    
     ///////////////////////////////////// Common Flow Storyboards /////////////////////////////////
     class func mainStoryboard() -> UIStoryboard {
         return UIStoryboard(name: "Main", bundle: Bundle.main)
@@ -20,8 +19,8 @@ extension UIStoryboard {
     
     
     ////////////////////////////////////// Common Flow Controllers /////////////////////////////////
-    
     class func getMusicSearchListingViewController(_ data: [String:Any] = [:]) -> MusicSearchListingViewController {
+        
         let viewController = mainStoryboard().instantiateViewController(withIdentifier: "MusicSearchListingViewController") as! MusicSearchListingViewController
         
         return viewController

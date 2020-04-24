@@ -21,10 +21,10 @@ class BaseNavigationViewController: UINavigationController, UINavigationControll
         super.didReceiveMemoryWarning()
     }
 
-    
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return UIStatusBarStyle.default
     }
+    
     
     func setupNavigation(){
         self.navigationBar.barTintColor =  UIColor(red: 84/255, green: 97/255, blue: 104/255, alpha: 1)
