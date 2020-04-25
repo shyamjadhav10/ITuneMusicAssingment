@@ -11,21 +11,21 @@ import Foundation
 
 class TrackListViewModel {
     
-    // Rendering data
+    
+    
+    // MARK: - Constants
     let screenTitle =  "iMusic"
     let cellIdentifier = "SingleTabCollectionViewCell"
     
     
+    // MARK: - Listeners
     var isLoading: Bindable<Bool> = Bindable(false)
     var tracks: Bindable<[Track]?> = Bindable(nil)
     var error: Bindable<CommonError?> = Bindable(nil)
-  
-    var resultCount: Int = 0
     
-    var numberOfRows : Int {
-        return resultCount
-    }
     
+    // MARK: - Declarations
+    private var resultCount: Int = 0
     private var httpClient: HTTPClient!
     
     init(client: HTTPClient? = nil) {
@@ -33,6 +33,20 @@ class TrackListViewModel {
     }
     
     
+    // MARK: - Properties
+    
+    func cellViewModel(indexPath: IndexPath)-> TrackViewModel {
+        guard let track = self.tracks.value?[indexPath.row] else { return TrackViewModel() }
+        return TrackViewModel(track: track)
+    }
+    
+    var numberOfRows : Int {
+        return resultCount
+    }
+    
+    
+    
+    // MARK: - API
     func getTrackList() {
         isLoading.value = true
         httpClient.dataTask(TrackAPI.getTrackList) { [weak self] (result) in

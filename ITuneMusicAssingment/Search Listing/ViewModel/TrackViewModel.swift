@@ -26,6 +26,10 @@ class TrackViewModel {
     let trackTimeMillis: Int?
     let collectionName: String?
     
+    init() {
+        
+    }
+    
     init(track: Track) {
         self.track = track
         
