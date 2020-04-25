@@ -24,15 +24,11 @@ class TrackViewModel {
     let trackPrice: Float?
     let currency: String
     let trackTimeMillis: Int?
-    let collectionName: String?
+    let collectionName: String
     
-    init() {
-        
-    }
     
     init(track: Track) {
         self.track = track
-        
         artistName = track.artistName
         previewUrl = URL(string: track.previewUrl ?? "")
         trackId = track.trackId
@@ -44,6 +40,18 @@ class TrackViewModel {
         trackPrice = track.trackPrice
         currency = track.currency
         trackTimeMillis = track.trackTimeMillis
-        collectionName = track.collectionName
+        collectionName = track.collectionName ?? ""
+    }
+}
+
+
+
+extension TrackViewModel {
+    var trackPriceInCurrency : String {
+        return "\(trackPrice ?? 0.0)" + currency
+    }
+    
+    var trackTimeAndGenre : String {
+        return  "\(trackTimeMillis?.msToSeconds.minuteSecond ?? "")     "  + primaryGenreName
     }
 }
