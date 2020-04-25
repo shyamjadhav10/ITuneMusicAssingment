@@ -52,6 +52,7 @@ public struct Track: Decodable {
 
 
 public struct TracksResponse: Decodable {
+    
     let resultCount: Int
     var tracks: [Track] = []
     
@@ -63,6 +64,7 @@ public struct TracksResponse: Decodable {
         
         let container = try decoder.container(keyedBy: CodingKeys.self)
         self.resultCount = try container.decodeIfPresent(Int.self, forKey: .resultCount) ?? 0
+        
         if let list = try container.decodeIfPresent([Track].self, forKey: .results) {
             self.tracks = list
         }

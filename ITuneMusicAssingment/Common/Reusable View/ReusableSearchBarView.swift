@@ -81,6 +81,8 @@ class ReusableSearchBarView: UIView {
     }
 }
 
+
+
 extension ReusableSearchBarView: UISearchBarDelegate {
     func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
         self.searchBar.showsCancelButton = true

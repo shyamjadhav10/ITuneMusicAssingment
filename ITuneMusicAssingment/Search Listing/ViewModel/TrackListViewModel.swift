@@ -14,10 +14,12 @@ class TrackListViewModel {
     // Rendering data
     let screenTitle =  "iMusic"
     
+    
     var isLoading: Bindable<Bool> = Bindable(false)
     var tracks: Bindable<[Track]?> = Bindable(nil)
     var error: Bindable<CommonError?> = Bindable(nil)
-
+    var resultCount: Int = 0
+    
     private var httpClient: HTTPClient!    
     
     init(client: HTTPClient? = nil) {
@@ -40,8 +42,9 @@ class TrackListViewModel {
                     return
                 }
                 do {
-                    let tracks = try JSONDecoder().decode([Track].self, from: data)
-                    self.tracks.value = tracks
+                    let tracks = try JSONDecoder().decode(TracksResponse.self, from: data)
+                    self.resultCount = tracks.resultCount
+                    self.tracks.value = tracks.tracks
                 } catch {
                     debugPrint("Unable to decode track List \(error)")
                 }
@@ -50,7 +53,5 @@ class TrackListViewModel {
                 debugPrint("Error in fetching tracks \(error)")
             }
         }
-    }
-    
-    
+    }    
 }
