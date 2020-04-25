@@ -13,14 +13,20 @@ class TrackListViewModel {
     
     // Rendering data
     let screenTitle =  "iMusic"
+    let cellIdentifier = "SingleTabCollectionViewCell"
     
     
     var isLoading: Bindable<Bool> = Bindable(false)
     var tracks: Bindable<[Track]?> = Bindable(nil)
     var error: Bindable<CommonError?> = Bindable(nil)
+  
     var resultCount: Int = 0
     
-    private var httpClient: HTTPClient!    
+    var numberOfRows : Int {
+        return resultCount
+    }
+    
+    private var httpClient: HTTPClient!
     
     init(client: HTTPClient? = nil) {
         self.httpClient = client ?? HTTPClient.shared
