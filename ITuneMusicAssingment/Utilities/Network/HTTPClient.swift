@@ -60,13 +60,15 @@ class HTTPClient {
                                     cachePolicy: .reloadIgnoringLocalAndRemoteCacheData,
                                     timeoutInterval: 60) //change this
         
-        if let params = request.parameters, let stringParams = params as? [String : String] {
+        if let params = request.parameters, let stringParams = params as? [String : String], !stringParams.isEmpty {
             urlRequest = getParams(url: request.baseURL.appendingPathComponent(request.path), parameter: stringParams)
         }
         
         urlRequest.httpMethod = request.httpMethod.rawValue
         urlRequest.httpBody = request.httpBody
         urlRequest.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        
+        print(urlRequest.url!)
         
         task = session.dataTask(with: urlRequest) { (data, response, error) in
             //return error if there is any error in making request

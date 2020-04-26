@@ -76,14 +76,18 @@ class MusicSearchListingViewController: UIViewController {
         }
         
         var params : [String : String] = [:]
-        params["term"] =  query
+        
+        //here by default passing text to show some response and if user has type something it will pass in query
+        params["term"] =  query.isEmpty ? "jack+johnson" : query
+        params["limit"]  = "\(viewModel.apiFetchLimit)"
+        
         viewModel.getTrackList(params: params)
     }
 }
 
 
 // MARK: - Data Source
-extension MusicSearchListingViewController: UICollectionViewDataSource {
+extension MusicSearchListingViewController: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
@@ -97,6 +101,7 @@ extension MusicSearchListingViewController: UICollectionViewDataSource {
         indexPath: IndexPath) -> CGSize {
         
         let cellWidth = ((self.view.frame.size.width / 2) - 16)
+        
         return CGSize(width: cellWidth, height: viewModel.cellHeight)
     }
     

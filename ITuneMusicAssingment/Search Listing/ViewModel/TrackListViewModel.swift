@@ -15,7 +15,8 @@ class TrackListViewModel {
     // MARK: - Constants
     let screenTitle =  "iMusic"
     let cellIdentifier = "SingleTabCollectionViewCell"
-    let cellHeight: CGFloat = 120
+    let apiFetchLimit = 25
+    let cellHeight: CGFloat = 180
 
     
     // MARK: - Listeners
