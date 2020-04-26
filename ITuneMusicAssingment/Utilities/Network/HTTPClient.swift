@@ -33,6 +33,25 @@ class HTTPClient {
     }
     
     
+    
+    func getParams(url : URL, parameter : [String : String]) -> URLRequest {
+        
+        var urlComponents =  URLComponents(url: url, resolvingAgainstBaseURL: true)!
+        var items = [URLQueryItem]()
+        
+        for (key,value) in parameter {
+            items.append(URLQueryItem(name: key, value: value))
+        }
+        
+        items = items.filter{!$0.name.isEmpty}
+        if !items.isEmpty {
+            urlComponents.queryItems = items // need to check if any param is not empty or it will generate 404
+        }
+        return  URLRequest(url: urlComponents.url!)
+    }
+    
+    
+    
     // MARK: - Data Task Helper
     func dataTask(_ request: RequestProtocol, completion: @escaping CompletionResult) {
         completionResult = completion
@@ -40,6 +59,10 @@ class HTTPClient {
         var urlRequest = URLRequest(url: request.baseURL.appendingPathComponent(request.path),
                                     cachePolicy: .reloadIgnoringLocalAndRemoteCacheData,
                                     timeoutInterval: 60) //change this
+        
+        if let params = request.parameters, let stringParams = params as? [String : String] {
+            urlRequest = getParams(url: request.baseURL.appendingPathComponent(request.path), parameter: stringParams)
+        }
         
         urlRequest.httpMethod = request.httpMethod.rawValue
         urlRequest.httpBody = request.httpBody

@@ -29,7 +29,7 @@ protocol RequestProtocol {
     var httpMethod: HTTPMethod { get }
     var httpBody: Data? { get }
     var headers: HTTPHeaders? { get }
-
+    var parameters: Any? { get }
 }
 
 

@@ -22,7 +22,6 @@ class SingleTabCollectionViewCell: UICollectionViewCell {
     //MARK: - Declarations
     
     
-    
     // MARK: - Default Methods
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -53,7 +52,8 @@ class SingleTabCollectionViewCell: UICollectionViewCell {
         setImage(url: viewModel.artworkUrl100)
     }
     
-    func setImage(url : String){
+    
+    private func setImage(url : String){
         trackImageView.fetchImages(pictureUrl: url)
     }
     

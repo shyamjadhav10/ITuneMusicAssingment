@@ -21,8 +21,8 @@ class TrackListViewModel {
     var tracks: Bindable<[Track]?> = Bindable(nil)
     var error: Bindable<CommonError?> = Bindable(nil)
     
-    // MARK: - Private Properties
     
+    // MARK: - Private Properties
     private var resultCount: Int = 0
     private var httpClient: HTTPClient!
     
@@ -31,7 +31,7 @@ class TrackListViewModel {
     }
     
     
-    // MARK: - Properties
+
     func cellViewModel(indexPath: IndexPath)-> TrackViewModel {
         let track = self.tracks.value![indexPath.row]
         return TrackViewModel(track: track)
@@ -43,9 +43,9 @@ class TrackListViewModel {
     
     
     // MARK: - API
-    func getTrackList() {
+    func getTrackList(params : [String : String]) {
         isLoading.value = true
-        httpClient.dataTask(TrackAPI.getTrackList) { [weak self] (result) in
+        httpClient.dataTask(TrackAPI.getTrackList(params: params)) { [weak self] (result) in
             guard let self = self else {
                 return
             }

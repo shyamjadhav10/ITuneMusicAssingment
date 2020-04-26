@@ -11,7 +11,7 @@ import Foundation
 
 //Track APIs
 enum TrackAPI {
-    case getTrackList
+    case getTrackList(params: [String: String])
     case getImage(url : String)
 }
 
@@ -59,6 +59,17 @@ extension TrackAPI : RequestProtocol {
             return nil
         }
     }
+    
+    var parameters: Any? {
+        switch self {
+        case .getTrackList(let params):
+            return params
+            
+        default:
+            return nil
+        }
+    }
+    
     
     //Return track APIs Specific Headers
     var headers: HTTPHeaders? {
