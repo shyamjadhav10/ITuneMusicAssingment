@@ -96,7 +96,8 @@ extension MusicSearchListingViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt
         indexPath: IndexPath) -> CGSize {
         
-        return CGSize(width: 20 , height: 30 )
+        let cellWidth = ((self.view.frame.size.width / 2) - 16)
+        return CGSize(width: cellWidth, height: viewModel.cellHeight)
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
