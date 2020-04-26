@@ -55,7 +55,7 @@ class MusicSearchListingViewController: UIViewController {
     
     
     // MARK: - API Calls
-    private func getTrackList() {
+    private func getTrackList(query : String = "") {
         //Binding
         viewModel.isLoading.bind { [unowned self] isLoading in
             if isLoading {
@@ -74,7 +74,10 @@ class MusicSearchListingViewController: UIViewController {
                 Utils.displayAlert(title: "Error", message: error.localizedDescription)
             }
         }
-        viewModel.getTrackList()
+        
+        var params : [String : String] = [:]
+        params["term"] =  query
+        viewModel.getTrackList(params: params)
     }
 }
 
@@ -89,7 +92,7 @@ extension MusicSearchListingViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return viewModel.numberOfItems
     }
-        
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt
         indexPath: IndexPath) -> CGSize {
         
@@ -97,7 +100,7 @@ extension MusicSearchListingViewController: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-       
+        
         guard let collectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: viewModel.cellIdentifier, for: indexPath) as? SingleTabCollectionViewCell else {  return UICollectionViewCell()  }
         
         collectionViewCell.setData(viewModel.cellViewModel(indexPath: indexPath))
@@ -119,7 +122,10 @@ extension MusicSearchListingViewController: ReusableSearchBarDelegate {
     
     func textDidChange(text: String) {
         if !text.isEmpty {
-            
+            let trimmedText = (text.trimmingCharacters(in: .whitespacesAndNewlines)).lowercased()
+            if trimmedText.count > 2 {
+                self.getTrackList(query: trimmedText)
+            }
         }
     }
     
