@@ -12,22 +12,35 @@ import Foundation
 //Track APIs
 enum TrackAPI {
     case getTrackList
+    case getImage(url : String)
 }
 
 extension TrackAPI : RequestProtocol {
     
     var baseURL: URL {
-        guard let url = URL(string: Constants.apiBaseUrl) else {
-            fatalError("BaseURL could not be configured.")
+        switch self {
+        case .getImage(let url):
+            guard let url = URL(string: url) else {
+                fatalError("BaseURL could not be configured.")
+            }
+            return url
+        default:
+            guard let url = URL(string: Constants.apiBaseUrl) else {
+                fatalError("BaseURL could not be configured.")
+            }
+            return url
         }
-        return url
     }
+    
     
     //Returns EndPoint for tracks APIs
     var path: String {
         switch self {
         case .getTrackList:
             return "/search"
+        case .getImage(_):
+            return ""
+            
         }
     }
     
