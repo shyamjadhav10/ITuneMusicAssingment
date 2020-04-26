@@ -10,11 +10,11 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ReusableSearchBarView" customModule="ITuneMusicAssingment" customModuleProvider="target">
             <connections>
-                <outlet property="searchBar" destination="4md-aF-S2g" id="MRP-EY-RLT"/>
+                <outlet property="searchBar" destination="4md-aF-S2g" id="fot-gt-VlE"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="ReusableSearchBarView" customModule="ITuneMusicAssingment" customModuleProvider="target">
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
             <rect key="frame" x="0.0" y="0.0" width="502" height="68"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
@@ -35,9 +35,6 @@
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
-            <connections>
-                <outlet property="searchBar" destination="4md-aF-S2g" id="rNU-nm-7Tu"/>
-            </connections>
             <point key="canvasLocation" x="172.46376811594203" y="84.040178571428569"/>
         </view>
     </objects>

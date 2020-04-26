@@ -120,7 +120,6 @@ extension MusicSearchListingViewController: UICollectionViewDelegate {
 
 // MARK: - Search Bar Delegate
 extension MusicSearchListingViewController: ReusableSearchBarDelegate {
-    
     func textDidChange(text: String) {
         if !text.isEmpty {
             let trimmedText = (text.trimmingCharacters(in: .whitespacesAndNewlines)).lowercased()
@@ -128,9 +127,5 @@ extension MusicSearchListingViewController: ReusableSearchBarDelegate {
                 self.getTrackList(query: trimmedText)
             }
         }
-    }
-    
-    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
-        
     }
 }

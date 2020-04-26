@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 
 class TrackListViewModel {
@@ -14,7 +15,8 @@ class TrackListViewModel {
     // MARK: - Constants
     let screenTitle =  "iMusic"
     let cellIdentifier = "SingleTabCollectionViewCell"
-    
+    let cellHeight: CGFloat = 120
+
     
     // MARK: - Listeners
     var isLoading: Bindable<Bool> = Bindable(false)
@@ -45,6 +47,7 @@ class TrackListViewModel {
     // MARK: - API
     func getTrackList(params : [String : String]) {
         isLoading.value = true
+        
         httpClient.dataTask(TrackAPI.getTrackList(params: params)) { [weak self] (result) in
             guard let self = self else {
                 return

@@ -23,7 +23,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let window = UIWindow(frame: frame)
         self.window = window
         
-        let controller = MusicSearchListingViewController()
+        let controller = UIStoryboard.getMusicSearchListingViewController()
         let navigationController = BaseNavigationViewController(rootViewController: controller)
         window.rootViewController = navigationController
         window.makeKeyAndVisible()
