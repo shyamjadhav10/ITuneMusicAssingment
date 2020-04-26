@@ -11,8 +11,6 @@ import Foundation
 
 class TrackListViewModel {
     
-
-
     // MARK: - Constants
     let screenTitle =  "iMusic"
     let cellIdentifier = "SingleTabCollectionViewCell"
@@ -23,8 +21,8 @@ class TrackListViewModel {
     var tracks: Bindable<[Track]?> = Bindable(nil)
     var error: Bindable<CommonError?> = Bindable(nil)
     
-    // MARK: - Outlets
-
+    // MARK: - Private Properties
+    
     private var resultCount: Int = 0
     private var httpClient: HTTPClient!
     
@@ -39,8 +37,7 @@ class TrackListViewModel {
         return TrackViewModel(track: track)
     }
     
-    
-    var numberOfRows : Int {
+    var numberOfItems : Int {
         return resultCount
     }
     

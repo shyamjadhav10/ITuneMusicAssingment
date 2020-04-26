@@ -64,60 +64,57 @@ class MusicSearchListingViewController: UIViewController {
                 ActivityIndicator.sharedIndicator.hideActivityIndicator()
             }
         }
-        
         viewModel.tracks.bind { [unowned self] (tracks) in
             if tracks != nil {
                 self.collectionView.reloadData()
             }
         }
-        
-        
         viewModel.error.bind {(error) in
             if let error = error {
                 Utils.displayAlert(title: "Error", message: error.localizedDescription)
             }
         }
-        
         viewModel.getTrackList()
     }
 }
 
 
-extension MusicSearchListingViewController: UICollectionViewDataSource, UICollectionViewDelegate,
-UICollectionViewDelegateFlowLayout {
-    
+// MARK: - Data Source
+extension MusicSearchListingViewController: UICollectionViewDataSource {
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
     }
     
-    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 0
+        return viewModel.numberOfItems
     }
-    
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt
+        indexPath: IndexPath) -> CGSize {
         
         return CGSize(width: 20 , height: 30 )
     }
     
-    
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let collectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: viewModel.cellIdentifier,
-                                                                          for: indexPath) as? SingleTabCollectionViewCell else {  return UICollectionViewCell()  }
+       
+        guard let collectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: viewModel.cellIdentifier, for: indexPath) as? SingleTabCollectionViewCell else {  return UICollectionViewCell()  }
         
-        
+        collectionViewCell.setData(viewModel.cellViewModel(indexPath: indexPath))
         return collectionViewCell
     }
-    
+}
+
+
+// MARK: - Delegate
+extension MusicSearchListingViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
     }
 }
 
 
-
+// MARK: - Search Bar Delegate
 extension MusicSearchListingViewController: ReusableSearchBarDelegate {
     
     func textDidChange(text: String) {

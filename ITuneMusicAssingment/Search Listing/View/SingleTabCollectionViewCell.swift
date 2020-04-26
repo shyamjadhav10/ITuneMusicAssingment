@@ -43,16 +43,18 @@ class SingleTabCollectionViewCell: UICollectionViewCell {
     }
     
     
+    //  Configuring response
     func setData(_ viewModel : TrackViewModel){
         setLabel(label: trackName, text: viewModel.trackName)
         setLabel(label: artistName, text: viewModel.artistName)
         setLabel(label: priceLabel, text: viewModel.trackPriceInCurrency)
         setLabel(label: collectionNameLabel, text: viewModel.collectionName)
         setLabel(label: trackTimeGenreLabel, text:viewModel.trackTimeAndGenre)
+        setImage(url: viewModel.artworkUrl100)
     }
     
-    func setImage(){
-        
+    func setImage(url : String){
+        trackImageView.fetchImages(pictureUrl: url)
     }
     
     private func setLabel(label : UILabel, text : String){
