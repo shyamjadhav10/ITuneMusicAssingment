@@ -17,13 +17,18 @@ import UIKit
 
 class ReusableSearchBarView: UIView {
     
+    // MARK: - Outlets
     @IBOutlet weak var searchBar: UISearchBar!
     
+    // MARK: - Declarations
     var delegate: ReusableSearchBarDelegate?
+    
+    
+    // MARK: - Default Methods
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-         fromNib()
+        fromNib()
         styleView()
     }
     
@@ -38,6 +43,7 @@ class ReusableSearchBarView: UIView {
         styleView()
     }
     
+    // MARK: - Setup Methods
     func styleView() {
         setView()
     }
@@ -82,7 +88,7 @@ class ReusableSearchBarView: UIView {
 }
 
 
-
+// MARK: - Search Bar Delegate
 extension ReusableSearchBarView: UISearchBarDelegate {
     func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
         self.searchBar.showsCancelButton = true
