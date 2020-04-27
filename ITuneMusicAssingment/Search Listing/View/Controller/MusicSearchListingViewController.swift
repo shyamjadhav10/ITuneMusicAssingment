@@ -29,6 +29,7 @@ class MusicSearchListingViewController: UIViewController {
     
     // MARK: - Setup Methods
     func setupView(){
+        self.title = viewModel.screenTitle
         getTrackList()
         setupSearchBar()
         setupCollectionView()
@@ -37,15 +38,16 @@ class MusicSearchListingViewController: UIViewController {
     
     func setupCollectionView() {
         let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
-        layout.minimumInteritemSpacing = 10.0
-        layout.minimumLineSpacing = 10.0
-        layout.sectionInset = UIEdgeInsets.init(top: 10.0, left: 10.0,
-                                                bottom: 10.0, right: 10.0)
+//        layout.minimumInteritemSpacing = 12.0
+//        layout.minimumLineSpacing = 12.0
+        layout.sectionInset = UIEdgeInsets.init(top: 12.0, left: 16.0,
+                                                bottom: 12.0, right: 16.0)
         layout.scrollDirection = .vertical
         collectionView.collectionViewLayout = layout
         collectionView.showsHorizontalScrollIndicator = false
         collectionView.delegate = self
         collectionView.dataSource = self
+        collectionView.backgroundColor = UIColor.black
         collectionView.registerNib(viewModel.cellIdentifier)
     }
     
@@ -101,9 +103,9 @@ extension MusicSearchListingViewController: UICollectionViewDataSource, UICollec
         indexPath: IndexPath) -> CGSize {
         
         let cellWidth = ((self.view.frame.size.width / 2) - 16)
-        
         return CGSize(width: cellWidth, height: viewModel.cellHeight)
     }
+    
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         

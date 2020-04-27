@@ -20,14 +20,12 @@ extension UIImageView {
         let pictureKey = NSString(string: pictureUrl)
         
         self.image = nil // setting it to nil
-        
+
         if let image = Constants.imageCache.object(forKey: pictureKey){
             self.image = image
             return
-            
         }else {
             HTTPClient.shared.dataTask(TrackAPI.getImage(url: pictureUrl)) { (result) in
-                
                 switch result {
                 case .success(let data):
                     

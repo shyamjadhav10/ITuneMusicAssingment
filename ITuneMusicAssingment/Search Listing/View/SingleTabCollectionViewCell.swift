@@ -31,17 +31,15 @@ class SingleTabCollectionViewCell: UICollectionViewCell {
     
     // MARK: - Setup Methods
     private func setupView() {
-        priceLabel.font = UIFont.boldSystemFont(ofSize: 15.0)
-        trackTimeGenreLabel.font = UIFont.boldSystemFont(ofSize: 13.0)
-        trackName.font = UIFont.boldSystemFont(ofSize: 13.0)
-        collectionNameLabel.font = UIFont.boldSystemFont(ofSize: 13.0)
-        artistName.font = UIFont.boldSystemFont(ofSize: 13.0)
-        
-        trackImageView.image = UIImage(named: "")
-        trackImageView.setRoundedCorners(cornerRadius: 3.0)
+        self.backgroundColor = UIColor.clear
+        priceLabel.font = UIFont.boldSystemFont(ofSize: 11.0)
+        trackTimeGenreLabel.font = UIFont.boldSystemFont(ofSize: 11.0)
+        trackName.font = UIFont.boldSystemFont(ofSize: 11.0)
+        collectionNameLabel.font = UIFont.boldSystemFont(ofSize: 11.0)
+        artistName.font = UIFont.boldSystemFont(ofSize: 11.0)
+        trackImageView.setRoundedCorners(cornerRadius: 5.0)
     }
-    
-    
+
     //  Configuring response
     func setData(_ viewModel : TrackViewModel){
         setLabel(label: trackName, text: viewModel.trackName)

@@ -43,7 +43,7 @@ class ReusableSearchBarView: UIView {
     }
     
     func setView(tintColor: UIColor = UIColor.white,
-                 backgroundColor: UIColor = UIColor.gray,
+                 backgroundColor: UIColor = UIColor.black,
                  textColor: UIColor = UIColor.black,
                  textFont: UIFont = UIFont.systemFont(ofSize: 12),
                  placeholderText: String = "Search Music",

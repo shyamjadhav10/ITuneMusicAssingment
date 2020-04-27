@@ -48,7 +48,7 @@ class TrackViewModel {
 
 extension TrackViewModel {
     var trackPriceInCurrency : String {
-        return "\(trackPrice ?? 0.0)" + currency
+        return "\(trackPrice ?? 0.0)  " + currency
     }
     
     var trackTimeAndGenre : String {
