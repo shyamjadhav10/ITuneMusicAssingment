@@ -38,8 +38,8 @@ class MusicSearchListingViewController: UIViewController {
     
     func setupCollectionView() {
         let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
-//        layout.minimumInteritemSpacing = 12.0
-//        layout.minimumLineSpacing = 12.0
+        layout.minimumInteritemSpacing = 12.0
+        layout.minimumLineSpacing = 12.0
         layout.sectionInset = UIEdgeInsets.init(top: 12.0, left: 16.0,
                                                 bottom: 12.0, right: 16.0)
         layout.scrollDirection = .vertical
@@ -76,14 +76,7 @@ class MusicSearchListingViewController: UIViewController {
                 Utils.displayAlert(title: "Error", message: error.localizedDescription)
             }
         }
-        
-        var params : [String : String] = [:]
-        
-        //here by default passing text to show some response and if user has type something it will pass in query
-        params["term"] =  query.isEmpty ? "jack+johnson" : query
-        params["limit"]  = "\(viewModel.apiFetchLimit)"
-        
-        viewModel.getTrackList(params: params)
+        viewModel.getTrackList(query: query)
     }
 }
 
@@ -102,7 +95,7 @@ extension MusicSearchListingViewController: UICollectionViewDataSource, UICollec
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt
         indexPath: IndexPath) -> CGSize {
         
-        let cellWidth = ((self.view.frame.size.width / 2) - 16)
+        let cellWidth = ((self.view.frame.size.width / 2) - 32)
         return CGSize(width: cellWidth, height: viewModel.cellHeight)
     }
     

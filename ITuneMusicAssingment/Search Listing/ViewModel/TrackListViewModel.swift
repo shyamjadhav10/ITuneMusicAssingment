@@ -46,8 +46,14 @@ class TrackListViewModel {
     
     
     // MARK: - API
-    func getTrackList(params : [String : String]) {
+    func getTrackList(query : String) {
+
         isLoading.value = true
+        var params : [String : String] = [:]
+        
+        //here by default passing text to show some response and if user has type something it will pass in query
+        params["term"] =  query.isEmpty ? "jack+johnson" : query
+        params["limit"]  = "\(apiFetchLimit)"
         
         httpClient.dataTask(TrackAPI.getTrackList(params: params)) { [weak self] (result) in
             guard let self = self else {
